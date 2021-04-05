@@ -4,16 +4,20 @@ import Main from "./components/Main";
 import Header from "./components/Header";
 import Portofolio from "./components/Portofolio";
 import Contacts from "./components/Contacts";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <div>
-        <Route path="/" component={Header} />
-        <Route path="/index.html" component={Main} />
-        <Route path="/portfolio.html" component={Portofolio} />
-        <Route path="/contact.html" component={Contacts} />
+        <Switch>
+
+          <Route path="/" exact component={Home} />
+          <Route path="/portfolio" component={Portofolio} />
+          <Route path="/contact" component={Contacts} />
+        </Switch>
 
       </div>
     </Router>
